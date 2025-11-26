@@ -8,14 +8,18 @@ $phpChoice = '';
 $result = '';
 
 
-if ($playerChoice !== '') {
+if ($playerChoice !== '')
+{
 
 
-    if (!in_array($playerChoice, $choices, true)) {
+    if (!in_array($playerChoice, $choices, true))
+    {
 
         $result = "Choix invalide.";
 
-    } else {
+    }
+    else
+    {
 
 
         $phpChoice = $choices[array_rand($choices)];
@@ -51,14 +55,15 @@ $html = <<<HTML
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container py-5">
+<div>
 
-    <h1 class=title>Pierre, Feuilles, Ciseaux</h1>
+    <h1 class="title">Pierre, Feuilles, Ciseaux</h1>
+    <hr>
 
-    <div class="card p-4 shadow-sm">
-
+    
+    <div>
         <h4>Votre choix :</h4>
         <p><strong>{$playerChoice}</strong></p>
 
@@ -70,23 +75,28 @@ $html = <<<HTML
 
         <hr>
 
-        <div class="d-flex gap-3">
-
+        <div>
             <a href="?player=pierre" class="btn btn-primary">Pierre</a>
             <a href="?player=feuille" class="btn btn-success">Feuille</a>
             <a href="?player=ciseaux" class="btn btn-danger">Ciseaux</a>
-
         </div>
 
         <hr>
 
         <a href="/" class="btn btn-secondary">Réinitialiser</a>
-
     </div>
 </div>
 
 <style>
+body
+{
+background-color: beige;
 
+}
+.title
+{
+margin-top: 30px;
+}
 </style>
 
 </body>
