@@ -45,7 +45,7 @@ $html = <<<HTML
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Jeu Pierre, Feuilles, Ciseaux</title>
+    <title>Pierre, Feuilles, Ciseaux</title>
 
  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@ $html = <<<HTML
 
 <div class="container py-5">
 
-    <h1 class="text-center mb-4">Jeu Pierre, Feuilles, Ciseaux</h1>
+    <h1 class=title>Pierre, Feuilles, Ciseaux</h1>
 
     <div class="card p-4 shadow-sm">
 
@@ -84,6 +84,10 @@ $html = <<<HTML
 
     </div>
 </div>
+
+<style>
+
+</style>
 
 </body>
 </html>
