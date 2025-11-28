@@ -167,7 +167,7 @@ $motDePasseGenere = genererMotDePasse(
             display: block;
             font-weight: 600;
             margin-bottom: 0.4rem;
-            color: #555;
+            color: #110d0d;
         }
         .field select
         {
@@ -207,7 +207,7 @@ $motDePasseGenere = genererMotDePasse(
         {
             cursor: pointer;
             font-size: 1rem;
-            color: #444;
+            color: #060505;
 
         .generate-btn
         {
