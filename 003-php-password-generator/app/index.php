@@ -131,7 +131,104 @@ $motDePasseGenere = genererMotDePasse(
     </form>
 
     <style>
+        .body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: blanchedalmond;
+            margin: 3px;
+            padding: 1rem;
+            color: #333;
+        }
+        .container
+        {
+            max-width: 480px;
+            margin: 2rem auto;
+            background: #716877;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(1,1,1,1.1);
+        }
+        .result
+        {
+            background-color: #ece0e0;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+        }
+        .form
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
 
+        .field label
+        {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #555;
+        }
+        .field select
+        {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline-offset: 2px;
+            transition: border-color 0.3s ease;
+        }
+        .field select:focus
+        {
+            border-color: #00796b;
+        }
+
+        .checkbox-group
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .checkbox
+        {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1 1 45%;
+        }
+        .checkbox input[type="checkbox"]
+        {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .checkbox label
+        {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #444;
+
+        .generate-btn
+        {
+            background-color: #24504b;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .generate-btn:hover,
+        .generate-btn:focus
+        {
+            background-color: #004d40;
+            outline: none;
+        }
     </style>
 
 </main>
