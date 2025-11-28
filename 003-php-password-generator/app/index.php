@@ -93,7 +93,7 @@ $motDePasseGenere = genererMotDePasse(
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
         <section class="result">
             <h2>Mot de passe généré:</h2>
-            de class="password-display"><?= htmlspecialchars($motDePasseGenere) ?></code>
+            <code class="password-place"><?= htmlspecialchars($motDePasseGenere) ?></code>
         </section>
     <?php endif; ?>
 
@@ -222,6 +222,8 @@ $motDePasseGenere = genererMotDePasse(
             text-transform: uppercase;
             transition: background-color 0.3s ease;
         }
+
+
 
         .generate-btn:hover,
         .generate-btn:focus
