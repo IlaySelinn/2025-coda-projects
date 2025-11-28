@@ -77,9 +77,23 @@ $motDePasseGenere = genererMotDePasse(
     $utiliserChiffres === '1',
     $utiliserSymboles === '1'
 );
-?>
 
+$displayPassword ="";
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+   $displayPassword =<<<HTML
+<section class="result">
+            <h2>Mot de passe généré:</h2>
+            <code class="password-place">$motDePasseGenere</code>
+        </section>
+HTML;
+}
+$useMinCheck =garderCoche($utiliserMin);
+$utiliserMaj = garderCoche($utiliserMaj);
+$utiliserChiffres = garderCoche($utiliserChiffres);
+$utiliserSymboles = garderCoche($utiliserSymboles);
 
+$html =<<<HTML
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -90,39 +104,34 @@ $motDePasseGenere = genererMotDePasse(
 </head>
 <body>
 <main class="container">
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-        <section class="result">
-            <h2>Mot de passe généré:</h2>
-            <code class="password-place"><?= htmlspecialchars($motDePasseGenere) ?></code>
-        </section>
-    <?php endif; ?>
 
+    $displayPassword
     <form method="POST" class="form">
         <div class="field">
             <label for="taille">Longueur:</label>
             <select id="taille" name="taille">
-                <?= $optionsLongueur ?>
+                $optionsLongueur
             </select>
         </div>
 
         <div class="checkbox-group">
             <div class="checkbox">
-                <input type="checkbox" id="use-min" name="use-min" value="1" <?= garderCoche($utiliserMin) ?>>
+                <input type="checkbox" id="use-min" name="use-min" value="1" $useMinCheck >
                 <label for="use-min">Minuscules (a-z)</label>
             </div>
 
             <div class="checkbox">
-                <input type="checkbox" id="use-maj" name="use-maj" value="1" <?= garderCoche($utiliserMaj) ?>>
+                <input type="checkbox" id="use-maj" name="use-maj" value="1" $utiliserMaj>
                 <label for="use-maj">Majuscules (A-Z)</label>
             </div>
 
             <div class="checkbox">
-                <input type="checkbox" id="use-chiffres" name="use-chiffres" value="1" <?= garderCoche($utiliserChiffres) ?>>
+                <input type="checkbox" id="use-chiffres" name="use-chiffres" value="1" $utiliserChiffres>
                 <label for="use-chiffres">Chiffres (0-9)</label>
             </div>
 
             <div class="checkbox">
-                <input type="checkbox" id="use-symboles" name="use-symboles" value="1" <?= garderCoche($utiliserSymboles) ?>>
+                <input type="checkbox" id="use-symboles" name="use-symboles" value="1" $utiliserSymboles>
                 <label for="use-symboles">Symboles</label>
             </div>
         </div>
@@ -131,6 +140,7 @@ $motDePasseGenere = genererMotDePasse(
     </form>
 
     <style>
+    
         .body
         {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -236,6 +246,8 @@ $motDePasseGenere = genererMotDePasse(
 </main>
 </body>
 </html>
+HTML;
+echo $html;
 
 
 
