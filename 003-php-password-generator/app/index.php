@@ -93,7 +93,7 @@ $motDePasseGenere = genererMotDePasse(
         <div class="col-lg-8 col-xl-6">
             <div class="card shadow-lg border-0">
                 <div class="card-header bg-gradient text-white text-center py-4">
-                    <h1 class="display-5 fw-bold mb-2">🔐 Générateur</h1>
+                    <h1 class="display-5 fw-bold mb-2">Générateur</h1>
                     <h2 class="fs-4 fw-normal opacity-90 mb-0">Mot de Passe Sécurisé</h2>
                 </div>
 
@@ -117,7 +117,7 @@ $motDePasseGenere = genererMotDePasse(
                     <form method="POST" action="">
                         <!-- Longueur -->
                         <div class="mb-4">
-                            <label for="taille" class="form-label h5 fw-bold text-dark mb-3">📏 Longueur</label>
+                            <label for="taille" class="form-label h5 fw-bold text-dark mb-3">Longueur</label>
                             <select class="form-select form-select-lg" id="taille" name="taille">
                                 <?= $optionsLongueur ?>
                             </select>
