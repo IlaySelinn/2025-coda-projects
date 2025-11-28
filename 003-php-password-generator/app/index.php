@@ -1,5 +1,5 @@
 <?php
-// ==================== GÉNÉRATEUR DE MOT DE PASSE ====================
+// GENERATUER DE MOT DE PASSE-PROJET
 
 // Configuration du mot de passe
 $longueurMin = 8;
@@ -16,24 +16,29 @@ $utiliserSymboles = $_POST['use-symboles'] ?? '1';
 $taille = max($longueurMin, min($longueurMax, $taille));
 
 // Les fonctions
-function garderCoche(string $valeur): string {
+function garderCoche(string $valeur): string
+{
     return $valeur === '1' ? 'checked' : '';
 }
 
-function optionsLongueur(int $actuelle, int $min, int $max): string {
+function optionsLongueur(int $actuelle, int $min, int $max): string
+{
     $options = '';
-    for ($i = $min; $i <= $max; $i++) {
+    for ($i = $min; $i <= $max; $i++)
+    {
         $selected = $i === $actuelle ? 'selected' : '';
         $options .= "<option value=\"$i\" $selected>$i</option>";
     }
     return $options;
 }
 
-function caractereAleatoire(string $chars): string {
+function caractereAleatoire(string $chars): string
+{
     return $chars[random_int(0, strlen($chars) - 1)];
 }
 
-function genererMotDePasse(int $taille, bool $min, bool $maj, bool $chiffres, bool $symboles): string {
+function genererMotDePasse(int $taille, bool $min, bool $maj, bool $chiffres, bool $symboles): string
+{
     $ensembles = [];
 
     if ($min) $ensembles[] = 'abcdefghijklmnopqrstuvwxyz';
@@ -47,13 +52,15 @@ function genererMotDePasse(int $taille, bool $min, bool $maj, bool $chiffres, bo
 
     $mdp = '';
     // Au moins un de chaque type sélectionné
-    foreach ($ensembles as $ensemble) {
+    foreach ($ensembles as $ensemble)
+    {
         $mdp .= caractereAleatoire($ensemble);
     }
 
     // Compléter le reste
     $reste = $taille - strlen($mdp);
-    for ($i = 0; $i < $reste; $i++) {
+    for ($i = 0; $i < $reste; $i++)
+    {
         $ensemble = $ensembles[random_int(0, count($ensembles) - 1)];
         $mdp .= caractereAleatoire($ensemble);
     }
