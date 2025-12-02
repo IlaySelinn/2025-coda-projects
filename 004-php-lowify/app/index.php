@@ -2,6 +2,9 @@
 require_once 'inc/page.inc.php';
 require_once 'inc/database.inc.php';
 
+
+
+
 $host = "mysql";
 $dbname = "lowify";
 $username = "lowify";
@@ -26,9 +29,7 @@ try {
     die("Database connection failed: " . $ex->getMessage());
 }
 
-/**
- * Top 5 Most Popular Artists
- */
+/*Top 5 Most Popular Artists*/
 try {
     $topArtists = $db->executeQuery("
         SELECT id, name, cover, monthly_listeners 
@@ -55,9 +56,7 @@ try {
     error_log("Top artists query failed: " . $ex->getMessage());
 }
 
-/**
- * Top 5 Most Recent Albums
- */
+/**Top 5 Most Recent Albums*/
 try {
     $recentAlbums = $db->executeQuery("
         SELECT a.id as album_id, a.name as album_name, a.cover, 
@@ -88,9 +87,7 @@ try {
     error_log("Recent albums query failed: " . $ex->getMessage());
 }
 
-/**
- * Top 5 Best Rated Albums
- */
+/**Top 5 Best Rated Album*/
 try {
     $bestAlbums = $db->executeQuery("
         SELECT a.id as album_id, a.name as album_name, a.cover,
@@ -170,12 +167,12 @@ $html = "<div class=\"page-container\">
     </section>
     
     <section class=\"content-section\">
-        <h2>🆕 New Releases</h2>
+        <h2>New Releases</h2>
         <div class=\"card-grid\">$recentAlbumsHTML</div>
     </section>
     
     <section class=\"content-section\">
-        <h2>⭐ Top Rated</h2>
+        <h2>Top Rated</h2>
         <div class=\"card-grid\">$bestAlbumsHTML</div>
     </section>
 </div>";
