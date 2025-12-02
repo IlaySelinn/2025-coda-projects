@@ -120,9 +120,8 @@ try {
     error_log("Best albums query failed: " . $ex->getMessage());
 }
 
-/**
- * Search autocomplete
- */
+
+ //Chercher completement
 try {
     $searchData = $db->executeQuery("
         SELECT DISTINCT name FROM artist 

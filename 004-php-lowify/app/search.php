@@ -2,6 +2,7 @@
 require_once 'inc/page.inc.php';
 require_once 'inc/database.inc.php';
 
+//database
 $host = "mysql";
 $dbname = "lowify";
 $username = "lowify";
@@ -27,7 +28,7 @@ if ($query === '') {
 }
 
 try {
-    // Sanatçı araması
+  //Chercher l'artist
     $searchArtists = $db->executeQuery("
         SELECT id, name, cover 
         FROM artist 
@@ -35,7 +36,7 @@ try {
         LIMIT 8
     ", ["%$query%"]);
 
-    // Albüm araması - albüm ya da sanatçı adına göre
+    // Chercer l'album
     $searchAlbums = $db->executeQuery("
         SELECT a.id, a.name, a.cover, art.name AS artist_name
         FROM album a
@@ -44,7 +45,7 @@ try {
         LIMIT 8
     ", ["%$query%", "%$query%"]);
 
-    // Şarkı araması
+    // Chercher la chanson
     $searchSongs = $db->executeQuery("
         SELECT s.id, s.name, s.duration, s.note, a.name AS album_name
         FROM song s

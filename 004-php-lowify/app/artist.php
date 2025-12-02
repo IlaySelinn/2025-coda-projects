@@ -26,9 +26,7 @@ if ($artistId <= 0) {
     exit;
 }
 
-/**
- * Sanatçı bilgilerini al
- */
+//Informations du chanteur
 try {
     $artist = $db->executeQuery("
         SELECT id, name, biography, cover, monthly_listeners 
@@ -45,9 +43,7 @@ if (!$artist) {
     exit;
 }
 
-/**
- * Top 5 şarkı (en iyi notlar)
- */
+//Les top 5 chancons
 try {
     $topSongs = $db->executeQuery("
         SELECT s.id, s.name, s.duration, s.note, a.name as album_name, a.cover
@@ -61,9 +57,7 @@ try {
     $topSongs = [];
 }
 
-/**
- * Tüm albümler
- */
+//Les albums
 try {
     $albums = $db->executeQuery("
         SELECT id, name, cover, release_date
