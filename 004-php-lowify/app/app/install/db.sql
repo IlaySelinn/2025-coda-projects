@@ -300,8 +300,7 @@ VALUES (
     ),
     (
         35,
-        'quia',docker ps
-
+        'quia',
         9,
         'https://picsum.photos/seed/Temporibus vel sint sunt eveniet illo./800/800?random=67878',
         '2018-03-19 00:00:00'
