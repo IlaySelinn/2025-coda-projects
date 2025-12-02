@@ -18,7 +18,7 @@ try {
     exit;
 }
 
-// GET id al
+// Information avec GET id
 $artistId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($artistId <= 0) {
@@ -75,7 +75,7 @@ try {
     $albums = [];
 }
 
-// Helper fonksiyonlar
+
 function formatDuration($seconds) {
     $minutes = floor($seconds / 60);
     $secs = $seconds % 60;
@@ -88,7 +88,7 @@ function formatListeners($number) {
     return number_format($number);
 }
 
-// Değişkenler hazırla
+
 $artistName = htmlspecialchars($artist['name']);
 $artistCover = htmlspecialchars($artist['cover']);
 $biography = nl2br(htmlspecialchars($artist['biography'] ?? ''));
@@ -115,7 +115,6 @@ foreach ($topSongs as $song) {
     </div>";
 }
 
-// Albums HTML
 $albumsHTML = "";
 foreach ($albums as $album) {
     $albumName = htmlspecialchars($album['name']);
